@@ -1,4 +1,3 @@
-package lab9;
 
 public class HashTableData{
 	private String key; 
@@ -20,6 +19,8 @@ public class HashTableData{
 		this.key = key;
 	}
 	
-	
+	public String toString() {
+		return key;
+	}
 
 } 

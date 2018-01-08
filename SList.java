@@ -1,4 +1,3 @@
-package lab9;
 public class SList <AnyType> // Singly linked list
 {
 	// Data members
@@ -18,6 +17,7 @@ public class SList <AnyType> // Singly linked list
 	void insert ( AnyType newElement ){
 		if (cursor == null){
 			cursor = new SListNode<AnyType>(newElement,null);
+			head = cursor; 
 		}
 		else {
 			cursor.setNext(new SListNode<AnyType>(newElement,null));

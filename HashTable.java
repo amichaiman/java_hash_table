@@ -1,4 +1,3 @@
-package lab9;
 
 public class HashTable {
 	private static final int DEF_MAX_HASH_SIZE = 10; // Default maximum hash table size
@@ -17,7 +16,10 @@ public class HashTable {
 	
 	// Called by constructors only
 	private void setup ( int maxNumber ) {
-		hashArray = new SList  [maxNumber];
+		hashArray =(SList<HashTableData>[]) new SList<?>[maxNumber];
+		for (int i = 0; i < hashArray.length; i++) {
+			hashArray[i] = new SList<HashTableData>();
+		}
 	}
 	
 	int HashFunction ( int key ) {
@@ -48,11 +50,7 @@ public class HashTable {
 			return false;
 		
 		int spotOfNewElemInHashArray = HashFunction(newElem.getKey());
-		
-		if (hashArray[spotOfNewElemInHashArray] == null) {
-			hashArray[spotOfNewElemInHashArray] = new SList<HashTableData>();
-		}
-		
+	
 		hashArray[spotOfNewElemInHashArray].insert(newElem);
 		
 		return true;
@@ -73,7 +71,8 @@ public class HashTable {
 	
 	// Hash status methods
 	public void clear ( ) {
-		
+		for (int i=0; i<hashArray.length; i++)
+			hashArray[i].clear();
 	}
 	
 	
@@ -92,7 +91,8 @@ public class HashTable {
 	
 	
 	public void showStructure ( ) {
-		
+		for (int i=0; i<hashArray.length; i++) 
+			hashArray[i].showStructure();
 	}
 	
 	private int stringToInt(String key) {
