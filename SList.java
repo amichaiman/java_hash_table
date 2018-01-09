@@ -31,7 +31,9 @@ public class SList <AnyType> // Singly linked list
 			//had privious
 			cursor.setNext(toDelete.getNext());
 			toDelete = null;
-		}
+		}else{
+                    head = cursor = null;
+                }
 	}
 
 	void replace ( AnyType newElement ){
@@ -105,18 +107,6 @@ public class SList <AnyType> // Singly linked list
 		}
 	}
 	
-	public boolean findElement(AnyType toFind) {
-		SListNode <AnyType> cur = head;
-		
-		while (cur != null)
-		{
-			if (cur.getElement() == toFind) {
-				cursor = cur;
-				return true;
-			}
-			cur = cur.getNext();
-		}
-		return false;
-	}
+
 	
 } // class SList

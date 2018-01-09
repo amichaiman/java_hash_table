@@ -34,14 +34,22 @@ public class HashTable {
 	}
 	
 	public boolean retrieve ( HashTableData searchElem) {
-		if(hashArray[HashFunction(searchElem.getKey())] == null)
-			return false;
-		
-		if (hashArray[HashFunction(searchElem.getKey())].findElement(searchElem))
-			return true;
-		
-		return false;
-		
+            int spotOfToFindElement = HashFunction(searchElem.getKey());
+            
+            hashArray[spotOfToFindElement].gotoBeginning();
+            
+            if (hashArray[spotOfToFindElement].getCursor().getKey().equals(searchElem.getKey()))
+                    return true;
+            
+            
+            System.out.println(hashArray[spotOfToFindElement].getCursor().getKey());
+            System.out.println(searchElem.getKey());
+            
+            while (hashArray[spotOfToFindElement].gotoNext())
+		if (hashArray[spotOfToFindElement].getCursor().getKey() == searchElem.getKey())
+                    return true;
+            System.out.println("hasdfhfasfslasfd");
+            return false;
 	}
 	
 	
@@ -62,6 +70,7 @@ public class HashTable {
 		
 		if (retrieve(remElem))
 		{
+                    System.out.println("i be true");
 			hashArray[spotOfremElemInHashArray].remove();
 			return true;
 		}
