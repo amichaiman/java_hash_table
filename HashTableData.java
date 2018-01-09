@@ -1,3 +1,4 @@
+package lab9;
 
 public class HashTableData{
 	private String key; 
@@ -5,6 +6,11 @@ public class HashTableData{
 	//c'tor
 	public HashTableData ( String key){
 		this.key = key;
+	}
+	
+	public HashTableData (double key)
+	{
+		this.key = Double.toString(key);
 	}
 	
 	public HashTableData (){
@@ -18,6 +24,8 @@ public class HashTableData{
 	public void setKey(String key) {
 		this.key = key;
 	}
+	
+	
 	
 	public String toString() {
 		return key;

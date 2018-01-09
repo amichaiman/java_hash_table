@@ -1,3 +1,5 @@
+package lab9;
+
 public class SList <AnyType> // Singly linked list
 {
 	// Data members
@@ -94,8 +96,10 @@ public class SList <AnyType> // Singly linked list
 		return false;
 	}
 	
-	AnyType getCursor (){
-		return cursor.getElement();
+	AnyType getCursor () {
+		if(cursor!=null)
+			return cursor.getElement();
+		return null;
 	}
 	
 	void showStructure (){

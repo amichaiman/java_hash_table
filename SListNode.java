@@ -1,3 +1,4 @@
+package lab9;
 
 public class SListNode<AnyType> { // A singly linked list node	 
 	 // Data members
